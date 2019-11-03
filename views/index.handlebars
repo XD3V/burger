@@ -1,3 +1,43 @@
-<h1>To Devour or not to Devour!</h1>
+<div id="backgroundImg">
 
+  <div>
+    <h1 align="center" class="title">To Devour or not to Devour?</h1>
+  </div>
 
+  <div class="col-md-1"></div>
+
+  <div class="col-md-3 container">
+    <h2 class="heading" align="center">Uneaten Burgers</h2>
+    <ul align="center">
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{ burgers/burger-block devoured=false}}
+      {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="col-md-3 container">
+    <h2 class="heading" align="center">Eaten Burgers</h2>
+    <ul align="center">
+      {{#each burgers}}
+      {{#if devoured}}
+      {{burger_name}}
+      {{> burgers/burger-block devoured=true}}
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+
+  <h2 class="heading">Add a New Burger</h2>
+  <form class="create-form">
+
+    <div class="form-group">
+      <label for="burgName" class="Subheading">Burger Name:</label>
+      <input type="text" id="burgName" name="name">
+    </div>
+
+    <button type="submit" class="button">Add Burger</button>
+  </form>
+ 
+</div>

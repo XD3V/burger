@@ -3,7 +3,7 @@ var connection = require("../config/connection.js");
  
 // Object for all our SQL statement functions.
 let orm = { 
-    
+
 selectAll: function(tableInput,cb){
 
     let  queryString = "SELECT * FROM " + tableInput + ";";
@@ -23,7 +23,7 @@ selectAll: function(tableInput,cb){
     queryString += cols.toString();
     queryString += ") ";
     queryString += "VALUES (";
-    queryString += printQuestionMarks(vals.length);
+    queryString += (vals.length);
     queryString += ") ";
 
     console.log(queryString);
@@ -55,6 +55,6 @@ selectAll: function(tableInput,cb){
   },
 
 }
-
+      
 // Export the orm object for the model (burger.js).
-module.exports = orm;
+module.exports = orm; 
