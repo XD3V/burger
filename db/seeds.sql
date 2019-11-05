@@ -1,4 +1,4 @@
-INSERT INTO burgers (burger_name, devoured)
+INSERT INTO burgers ( burger_name, devoured)
 values 
 ('double double animal style', 'false'),
 ('Luger Burger', 'false'),

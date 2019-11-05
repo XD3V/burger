@@ -14,6 +14,7 @@ var connection = mysql.createConnection({
   database: "burgers_db"
 });
 
+
 // Connect to the database
 connection.connect(function(err) {
   if (err) {
@@ -23,5 +24,8 @@ connection.connect(function(err) {
   console.log("connected as id " + connection.threadId);
 });
 
+connection.on('error', function(err) {
+  console.log("[mysql error]",err);
+});
 // Export connection
 module.exports = connection;
